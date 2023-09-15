@@ -7,7 +7,7 @@ const assignmentLoad = () =>{
 const containerData = protopytes =>{
     console.log(protopytes);
     protopytes.forEach(protopyte=>{
-        // console.log(protopyte.phone_name);
+        // console.log(protopyte);
         
 
         const containerDiv = document.getElementById('load-data');
@@ -21,7 +21,7 @@ const containerData = protopytes =>{
                   <p class="card-text">${protopyte.slug}</p>
                 </div>
                 <div class="card-footer">
-                <button onclick="detailsData()">Click Me</button>
+                <button id="click-data" onclick="detailsData()">Click Me</button>
                 </div>
         `
         containerDiv.appendChild(div);
@@ -32,6 +32,13 @@ const containerData = protopytes =>{
 const detailsData = () =>{
     fetch('https://openapi.programming-hero.com/api/phone/apple_iphone_13_pro_max-11089')
     .then(res =>res.json())
-    .then(data => console.log(data.data));
+    .then(data => detailsContainer(data.data));
+
+   
 }
 // detailsContainer();
+
+const detailsContainer = loadList=>{
+    console.log(loadList.image);
+}
+
