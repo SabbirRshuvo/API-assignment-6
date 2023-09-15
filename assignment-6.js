@@ -25,6 +25,8 @@ const containerData = protopytes =>{
                 </div>
         `
         containerDiv.appendChild(div);
+
+
         
     })
 }
@@ -33,12 +35,20 @@ const detailsData = () =>{
     fetch('https://openapi.programming-hero.com/api/phone/apple_iphone_13_pro_max-11089')
     .then(res =>res.json())
     .then(data => detailsContainer(data.data));
+    
 
    
 }
 // detailsContainer();
 
 const detailsContainer = loadList=>{
-    console.log(loadList.image);
+    console.log(loadList);
+
+    const listContainer = document.getElementById('click-data');
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <img src="${loadList.image}" class="list-data" alt="...">
+    `;
+    listContainer.appendChild(div);
 }
 
