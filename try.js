@@ -42,7 +42,7 @@ const detailsData = () => {
 };
 // detailsContainer();
 
-const detailsContainer = (loadList) => {
+const detailsContainer = () => {
     document.querySelectorAll(".col:not(.active)").forEach((item) => {
         item.style.display = "none";
         
